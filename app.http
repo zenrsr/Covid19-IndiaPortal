@@ -1,0 +1,63 @@
+// Login
+POST http://localhost:3010/login/
+Content-Type: application/json
+
+{
+  "username": "christopher_phillips",
+  "password": "christy@123"
+}
+###
+
+// API 2
+GET http://localhost:3010/states/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocmlzdG9waGVyX3BoaWxsaXBzIiwiaWF0IjoxNjkxNDc0MDA1fQ.y9ku1PVzKKhheWKgXsGSgI5T-uM--VXLFGsA5lHxzXE
+###
+
+// API 3
+GET http://localhost:3010/states/31/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocmlzdG9waGVyX3BoaWxsaXBzIiwiaWF0IjoxNjkxNDc0MDA1fQ.y9ku1PVzKKhheWKgXsGSgI5T-uM--VXLFGsA5lHxzXE
+###
+
+// API 4
+POST http://localhost:3010/districts/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocmlzdG9waGVyX3BoaWxsaXBzIiwiaWF0IjoxNjkxNDc0MDA1fQ.y9ku1PVzKKhheWKgXsGSgI5T-uM--VXLFGsA5lHxzXE
+Content-Type: application/json
+
+{
+  "districtName": "Bagalkot",
+  "stateId": 3,
+  "cases": 2323,
+  "cured": 2000,
+  "active": 315,
+  "deaths": 8
+}
+###
+
+// API 5
+GET http://localhost:3010/districts/764/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocmlzdG9waGVyX3BoaWxsaXBzIiwiaWF0IjoxNjkxNDc0MDA1fQ.y9ku1PVzKKhheWKgXsGSgI5T-uM--VXLFGsA5lHxzXE
+###
+ 
+ // API 6
+DELETE http://localhost:3010/districts/766/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocmlzdG9waGVyX3BoaWxsaXBzIiwiaWF0IjoxNjkxNDc0MDA1fQ.y9ku1PVzKKhheWKgXsGSgI5T-uM--VXLFGsA5lHxzXE
+###
+
+// API 7
+PUT http://localhost:3010/districts/764/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocmlzdG9waGVyX3BoaWxsaXBzIiwiaWF0IjoxNjkxNDc0MDA1fQ.y9ku1PVzKKhheWKgXsGSgI5T-uM--VXLFGsA5lHxzXE
+Content-Type: application/json
+
+{
+  "districtName": "Nadia",
+  "stateId": 3,
+  "cases": 9628,
+  "cured": 6524,
+  "active": 3000,
+  "deaths": 104
+}
+###
+
+// API 8
+GET http://localhost:3010/states/3/stats/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocmlzdG9waGVyX3BoaWxsaXBzIiwiaWF0IjoxNjkxNDc0MDA1fQ.y9ku1PVzKKhheWKgXsGSgI5T-uM--VXLFGsA5lHxzXE
