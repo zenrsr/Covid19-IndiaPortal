@@ -41,13 +41,13 @@ const authenticateToken = async (request, response, next) => {
   let jwtToken;
   const authHeader = request.headers["authorization"];
   if (authHeader === undefined) {
-    response.send(401);
+    response.status(401);
     response.send("Invalid JWT Token");
   } else {
     jwtToken = authHeader.split(" ")[1];
     jwt.verify(jwtToken, "secret_key", async (error, payload) => {
       if (error) {
-        response.send(401);
+        response.status(401);
         response.send("Invalid JWT Token");
       } else {
         next();
@@ -63,7 +63,8 @@ app.post("/login/", async (request, response) => {
     const userQuery = `SELECT * FROM user WHERE username = '${username}';`;
     const dbUser = await db.get(userQuery);
     if (dbUser === undefined) {
-      response.status(400).send("Invalid User");
+      response.status(400);
+      response.send("Invalid user");
     } else {
       const match = await bcrypt.compare(password, dbUser.password);
       if (match == true) {
@@ -71,7 +72,8 @@ app.post("/login/", async (request, response) => {
         const jwtToken = await jwt.sign(payload, "secret_key");
         response.send({ jwtToken });
       } else {
-        response.status(400).send("Invalid password");
+        response.status(400);
+        response.send("Invalid password");
       }
     }
   } catch (e) {
